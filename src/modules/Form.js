@@ -1,4 +1,5 @@
 import React from 'react';
+import Fixtures from './Fixtures.js'
 import './Form.css'
 
 class Form extends React.Component {
@@ -17,6 +18,7 @@ class Form extends React.Component {
         this.updateNames = this.updateNames.bind(this);
         this.goBack = this.goBack.bind(this);
         this.submit = this.submit.bind(this);
+        this.goToFixtures = this.goToFixtures.bind(this);
     }
 
     updateToName(e) {
@@ -64,6 +66,12 @@ class Form extends React.Component {
         }
     }
 
+    goToFixtures() {
+        this.setState({
+            stage: 2
+        });
+    }
+
     render() {
         return(
             (this.state.stage===0)?(
@@ -79,18 +87,25 @@ class Form extends React.Component {
                 </div>
                 
                 ):(
-                <div className="Form">
-                    <h2 className="title2">{this.state.toname}</h2>
-                    <p className="description">Enter Team Names</p>
-                    {this.state.tnames.map((name, i) => (
-                        <div key={i}>
-                            <input type="text" placeholder={i+1} value={name} onChange={(e) => this.updateNames(e, i)}></input>
-                            <br/><br/>
+                    (this.state.stage===1)?(
+
+                        <div className="Form">
+                            <h2 className="title2">{this.state.toname}</h2>
+                            <p className="description">Enter Team Names</p>
+                            {this.state.tnames.map((name, i) => (
+                                <div key={i}>
+                                    <input type="text" placeholder={i+1} value={name} onChange={(e) => this.updateNames(e, i)}></input>
+                                    <br/><br/>
+                                </div>
+                            ))}
+                            <button className="back" onClick={this.goBack}>BACK</button>
+                            <button className="names-submit" onClick={this.goToFixtures}>GO</button>
                         </div>
-                    ))}
-                    <button className="back" onClick={this.goBack}>BACK</button>
-                    <button className="names-submit">GO</button>
-                </div>
+                    ):(
+
+                        <Fixtures teams={this.state.tnames}/>
+
+                    )
                 )
             );
     }
