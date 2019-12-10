@@ -1,13 +1,19 @@
-h2 {
+.title {
     font-weight: 300;
     margin-top: -0.5em;
-    margin: 0.1em;
 }
 
-p {
+.description {
     font-weight: 300;
     font-size: 0.7em;
     margin-bottom: 1.8em;
+    margin-top: 0.2em;
+}
+
+.title2 {
+    font-weight: 300;
+    margin: 1em;
+    font-size: 1.2em;
 }
 
 input[type="text"] {
@@ -33,4 +39,16 @@ button {
     border: 1px solid #ececec;
     border-radius: 100px;
     cursor: pointer;
+}
+
+.back {
+    margin-right: 3em;
+    background-color: red;
+    margin-top: -2em;
+    margin-bottom: 2.5em;
+}
+
+.names-submit {
+    margin-top: -2em;
+    margin-bottom: 2.5em;
 }
