@@ -14,6 +14,7 @@ class Form extends React.Component {
 
         this.updateToName = this.updateToName.bind(this);
         this.updateNum = this.updateNum.bind(this);
+        this.updateNames = this.updateNames.bind(this);
         this.goBack = this.goBack.bind(this);
         this.submit = this.submit.bind(this);
     }
@@ -30,6 +31,14 @@ class Form extends React.Component {
                     tnum: e.target.value
             });
         }
+    }
+
+    updateNames(e, i) {
+        var tnamestemp = this.state.tnames;
+        tnamestemp[i] = e.target.value;
+        this.setState({
+            tnames: tnamestemp
+        });
     }
 
     goBack() {
@@ -74,8 +83,8 @@ class Form extends React.Component {
                     <h2 className="title2">{this.state.toname}</h2>
                     <p className="description">Enter Team Names</p>
                     {this.state.tnames.map((name, i) => (
-                        <div>
-                            <input type="text" key={i} placeholder={i+1}></input>
+                        <div key={i}>
+                            <input type="text" placeholder={i+1} value={name} onChange={(e) => this.updateNames(e, i)}></input>
                             <br/><br/>
                         </div>
                     ))}
