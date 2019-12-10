@@ -34,6 +34,7 @@ class Form extends React.Component {
 
     goBack() {
         this.setState({
+            tnames: [],
             stage: 0
         });
     }
@@ -70,7 +71,8 @@ class Form extends React.Component {
                 
                 ):(
                 <div className="Form">
-                    <p className="title2">Enter Team Names</p>
+                    <h2 className="title2">{this.state.toname}</h2>
+                    <p className="description">Enter Team Names</p>
                     {this.state.tnames.map((name, i) => (
                         <div>
                             <input type="text" key={i} placeholder={i+1}></input>
