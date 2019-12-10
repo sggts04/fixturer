@@ -1,4 +1,14 @@
 .App {
   text-align: center;
-  background-color: white;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 25vh;
+  min-height: 50vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 hsla(0,0%,70%,.5);
 }
