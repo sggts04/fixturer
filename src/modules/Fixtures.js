@@ -35,6 +35,7 @@ class Fixtures extends React.Component {
     render() {
         return (
         <div className="Fixtures">
+            <h2 className="title2">{this.props.toname}</h2>
             <div className="matchups">
             {this.state.matchups.map((matchupr) => {
                 return (

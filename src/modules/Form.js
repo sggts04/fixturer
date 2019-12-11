@@ -110,7 +110,7 @@ class Form extends React.Component {
                         </div>
                     ):(
 
-                        <Fixtures teams={this.state.tnames}/>
+                        <Fixtures teams={this.state.tnames} toname={this.state.toname}/>
 
                     )
                 )
