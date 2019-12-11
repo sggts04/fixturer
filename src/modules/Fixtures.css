@@ -1,4 +1,16 @@
+.matchups {
+    display: flex;
+    flex-direction: row;
+}
+
+.matchupr {
+    display: inline-flex;
+    flex-direction: column;
+}
+
 .matchup {
     margin-top: 2em;
     margin-bottom: 2em;
+    margin: auto 2em;
+    padding: 1em;
 }

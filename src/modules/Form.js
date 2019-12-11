@@ -67,8 +67,15 @@ class Form extends React.Component {
     }
 
     goToFixtures() {
+        var tnamestemp = this.state.tnames;
+        for(var i=0; i<this.state.tnum; i++) {
+            if(tnamestemp[i] === '') {
+                tnamestemp[i] = 'Team ' + (i+1);
+            }
+        }
         this.setState({
-            stage: 2
+            stage: 2,
+            tnames: tnamestemp
         });
     }
 
